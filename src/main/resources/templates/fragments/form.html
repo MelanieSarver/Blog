@@ -4,7 +4,7 @@
     ...
 </head>
 <body>
-<div th:fragment="post-form(action, post, label)" class="form-group">
+<div th:fragment="post_form(action, post, label)" class="form-group">
     <form th:attr="action=${action}" method="POST" th:object="${post}">
         <label>Title</label>
         <input class="form-control" type="text" name="title" th:field="*{title}"/>
@@ -15,6 +15,11 @@
     </form>
 </div>
 
-
+<div th:fragment="delete_form" class="form-group">
+    <form th:method="POST" th:action="@{'/posts/delete'}">
+        <input type="hidden" name="id" th:value="${post.id}"/>
+        <input class="btn btn-info" type="submit" value="Delete"/>
+    </form>
+</div>
 </body>
 </html>
