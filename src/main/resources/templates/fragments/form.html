@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    ...
+</head>
+<body>
+<div th:fragment="post-form(action, post, label)" class="form-group">
+    <form th:attr="action=${action}" method="POST" th:object="${post}">
+        <label>Title</label>
+        <input class="form-control" type="text" name="title" th:field="*{title}"/>
+        <label>Body</label>
+        <input class="form-control" type="text" name="body" th:field="*{body}"/>
+
+        <input class="btn btn-info" type="submit" th:attr="value=${label}" />
+    </form>
+</div>
+
+
+</body>
+</html>
