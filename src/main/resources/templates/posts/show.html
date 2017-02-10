@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: head(title='View Your Post')">
+    ...
+</head>
+<body>
+    <div class="navbar" th:replace="fragments/navbar :: navbar">...</div>
+    <div class="container stuff">
+        <h1>View a Single Post</h1>
+        <h2><span th:text="${post.title}"></span></h2>
+        <h2><span th:text="${post.body}"></span></h2>
+        <div th:replace="fragments/form :: delete_form">...</div>
+    </div>
+</body>
+</html>
